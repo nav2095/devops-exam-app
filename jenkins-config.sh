@@ -17,6 +17,11 @@ jenkins_cli() {
     java -jar $JENKINS_CLI_JAR -s $JENKINS_URL -auth admin:$INITIAL_PASSWORD "$@"
 }
 
+# Function to run Jenkins CLI commands with auth
+jenkins_cli_auth() {
+    java -jar $JENKINS_CLI_JAR -s $JENKINS_URL -auth admin:$INITIAL_PASSWORD "$@"
+}
+
 # Install required plugins
 echo "Installing Jenkins plugins..."
 jenkins_cli install-plugin sonar
